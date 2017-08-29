@@ -14,11 +14,11 @@ var html = fs.readFileSync('/dev/stdin').toString();
 // Parse HTML and output to console.
 readability(html, function(err, article, meta) {
 
-	article.content = processContent(article.content);
+  article.content = processContent(article.content);
 
   var twig = fs.readFileSync('./templates/article.html.twig').toString();
   var template = Twig.twig({ data: twig });
   var html_processed = template.render(article);
   
-	console.log(html_processed);
+  console.log(html_processed);
 });
