@@ -1,7 +1,9 @@
 var fs = require('fs');
 var readability = require('node-readability');
-var yaml = require('js-yaml')
-var md5 = require('md5')
+var yaml = require('js-yaml');
+var md5 = require('md5');
+var Twig = require('twig');
+
 
 const child_process = require( 'child_process' );
 
@@ -41,6 +43,12 @@ for (url of book.content) {
   }
 }
 
+// Set metadata.
+var twig = fs.readFileSync('./templates/epub-metadata.xml.twig').toString();
+var template = Twig.twig({ data: twig });
+var xml = template.render(book);
+fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
+
 var filepaths = [];
 for (url of book.content) {
   var url_md5 = md5(url);
@@ -48,4 +56,7 @@ for (url of book.content) {
 }
 
 console.log('Creating EPUB.')
+child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
+
 child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub' ].concat(filepaths) );
+
