@@ -1,4 +1,4 @@
-# Webpages to EPUB
+# Webpages to eBook
 
 Create an EPUB from a list of URLs. Standing on the shoulders of 
 
