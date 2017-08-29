@@ -12,6 +12,7 @@
     "htmltidy2": "^0.2.1",
     "js-yaml": "^3.9.1",
     "md5": "^2.2.1",
-    "node-readability": "^3.0.0"
+    "node-readability": "^3.0.0",
+    "twig": "^1.10.5"
   }
 }
