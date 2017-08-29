@@ -26,7 +26,9 @@ child_process.spawnSync( 'mkdir', [ '-p', './output/html/' ] );
 for (url of book.content) {
   console.log("\t" + url);
   var url_md5 = md5(url);
-  child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', '--no-clobber', url ] ); 
+  if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
+    child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+	}
 }
 
 console.log('Creating Markdown.');
