@@ -30,7 +30,7 @@ for (url of book.content) {
   var url_md5 = md5(url);
   if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
     child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-	}
+  }
 }
 
 console.log('Creating Markdown.');
@@ -52,7 +52,7 @@ fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
 var filepaths = [];
 for (url of book.content) {
   var url_md5 = md5(url);
-	filepaths.push('./output/html.processed/' + url_md5 + '.html');
+  filepaths.push('./output/html.processed/' + url_md5 + '.html');
 }
 
 console.log('Creating EPUB.')
