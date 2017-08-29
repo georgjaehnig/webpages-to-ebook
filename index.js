@@ -57,6 +57,3 @@ for (url of book.content) {
 
 console.log('Creating EPUB.')
 child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
-
-child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub' ].concat(filepaths) );
-
