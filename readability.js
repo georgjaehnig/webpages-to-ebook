@@ -1,5 +1,6 @@
 var readability = require('node-readability');
 var fs = require('fs');
+var Twig = require('twig');
 
 var processContent = function(content) {
   content = content.replace(/(<img .*?)>/g, '$1/>');
@@ -12,9 +13,12 @@ var html = fs.readFileSync('/dev/stdin').toString();
 
 // Parse HTML and output to console.
 readability(html, function(err, article, meta) {
-	var title =  article.title;
-	var content = article.content;
-	content = processContent(content);
-	var md = '<h1>' + title + "</h1>" + content;
-	console.log(md);
+
+	article.content = processContent(article.content);
+
+  var twig = fs.readFileSync('./templates/article.html.twig').toString();
+  var template = Twig.twig({ data: twig });
+  var html_processed = template.render(article);
+  
+	console.log(html_processed);
 });
