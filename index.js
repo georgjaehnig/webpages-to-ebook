@@ -33,7 +33,7 @@ for (url of book.content) {
   }
 }
 
-console.log('Creating Markdown.');
+console.log('Extracting content.');
 child_process.spawnSync( 'mkdir', [ '-p', './output/html.processed/' ] ); 
 for (url of book.content) {
   var url_md5 = md5(url);
