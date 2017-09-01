@@ -60,3 +60,6 @@ typings/
 # Custom
 # Output directories.
 output/
+
+# Old material.
+material/
