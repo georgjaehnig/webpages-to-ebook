@@ -7,13 +7,6 @@ var Twig = require('twig');
 
 const child_process = require( 'child_process' );
 
-var processContent = function(content) {
-  content = content.replace(/(<img .*?)>/g, '$1/>');
-  content = content.replace(/<br>/g, '<br/>');
-  content = content.replace(/\n/g, '');
-  return content;
-}
-
 if (process.argv.length < 3) {
   console.log('Usage:');
   console.log(process.argv[1] + ' settings.yml');
