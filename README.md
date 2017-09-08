@@ -14,7 +14,7 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 - [SlateStarCodex top articles](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), created from [`definitions/slatestarcodex.top.yml`](definitions/slatestarcodex.top.yml)
 
 
-## Create your own
+## Create your own ebooks
 
 ### Requirements
 
