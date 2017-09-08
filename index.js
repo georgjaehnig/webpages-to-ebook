@@ -1,9 +1,7 @@
 var fs = require('fs');
-var readability = require('node-readability');
 var yaml = require('js-yaml');
 var md5 = require('md5');
 var Twig = require('twig');
-
 
 const child_process = require( 'child_process' );
 
