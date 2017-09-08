@@ -4,6 +4,11 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 
 > [Wget](https://www.gnu.org/software/wget/) → [Readability](https://github.com/mozilla/readability) → [Pandoc](https://pandoc.org/)
 
+
+## Examples
+- [SlateStarCodex all articles 2017](https://drive.google.com/open?id=0B73-tppgbUreVy05TXlOcm5DczQ), created from [`definitions/slatestarcodex.year.2017.yml`](definitions/slatestarcodex.year.2017.yml)
+
+
 ## Requirements
 
 - Node.js
