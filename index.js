@@ -5,15 +5,19 @@ var Twig = require('twig');
 
 const child_process = require( 'child_process' );
 
+// Parse arguments.
 if (process.argv.length < 3) {
   console.log('Usage:');
   console.log(process.argv[1] + ' settings.yml');
   process.exit();
 }
-var ymlPath = process.argv[2];
 
+// Read definition.
+var ymlPath = process.argv[2];
 var yml = fs.readFileSync(ymlPath, 'utf-8');
 var book = yaml.load(yml)
+
+// Download HTML.
 console.log('Downloading HTML.');
 child_process.spawnSync( 'mkdir', [ '-p', './output/html/' ] ); 
 for (url of book.content) {
@@ -24,6 +28,7 @@ for (url of book.content) {
   }
 }
 
+// Extract content.
 console.log('Extracting content.');
 child_process.spawnSync( 'mkdir', [ '-p', './output/html.processed/' ] ); 
 for (url of book.content) {
@@ -46,5 +51,6 @@ for (url of book.content) {
   filepaths.push('./output/html.processed/' + url_md5 + '.html');
 }
 
+// Create EPUB.
 console.log('Creating EPUB.')
 child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
