@@ -7,6 +7,11 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 
 ## Examples
 - [SlateStarCodex all articles 2017](https://drive.google.com/open?id=0B73-tppgbUreVy05TXlOcm5DczQ), created from [`definitions/slatestarcodex.year.2017.yml`](definitions/slatestarcodex.year.2017.yml)
+- [SlateStarCodex all articles 2016](https://drive.google.com/open?id=0B73-tppgbUreNE94UEdFTnNDTHM), created from [`definitions/slatestarcodex.year.2016.yml`](definitions/slatestarcodex.year.2016.yml)
+- [SlateStarCodex all articles 2015](https://drive.google.com/open?id=0B73-tppgbUreZlU1N1h3TUFHM1k), created from [`definitions/slatestarcodex.year.2015.yml`](definitions/slatestarcodex.year.2015.yml)
+- [SlateStarCodex all articles 2014](https://drive.google.com/open?id=0B73-tppgbUreZExTZ1hOdHdWMjg), created from [`definitions/slatestarcodex.year.2014.yml`](definitions/slatestarcodex.year.2014.yml)
+- [SlateStarCodex all articles 2013](https://drive.google.com/open?id=0B73-tppgbUredzNjY0xPbmNOVms), created from [`definitions/slatestarcodex.year.2013.yml`](definitions/slatestarcodex.year.2013.yml)
+- [SlateStarCodex top articles](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), created from [`definitions/slatestarcodex.top.yml`](definitions/slatestarcodex.top.yml)
 
 
 ## Requirements
