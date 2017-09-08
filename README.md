@@ -14,19 +14,21 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 - [SlateStarCodex top articles](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), created from [`definitions/slatestarcodex.top.yml`](definitions/slatestarcodex.top.yml)
 
 
-## Requirements
+## Create your own
+
+### Requirements
 
 - Node.js
 - NPM
 - [Wget](https://www.gnu.org/software/wget/) 
 - [Pandoc](https://pandoc.org/)
 
-## Install
+### Install
 
     git clone https://github.com/georgjaehnig/webpages-to-ebook.git
     npm install
 
-## Usage
+### Usage
 
 1. Create a definition, like the examples in `definitions/`.
 2. `node index.js your-created-definition.yml`
