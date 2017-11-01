@@ -3,6 +3,14 @@ var yaml = require('js-yaml');
 var md5 = require('md5');
 var Twig = require('twig');
 
+var readability = require('node-readability');
+
+var processContent = function(content) {
+  content = content.replace(/(<img .*?)>/g, '$1/>');
+  content = content.replace(/<br>/g, '<br/>');
+  return content;
+}
+
 const child_process = require( 'child_process' );
 
 // Parse arguments.
