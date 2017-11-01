@@ -27,7 +27,6 @@ var book = yaml.load(yml)
 
 // Download HTML.
 console.log('Downloading HTML.');
-child_process.spawnSync( 'mkdir', [ '-p', './output/html/' ] ); 
 for (url of book.content) {
   console.log("\t" + url);
   var url_md5 = md5(url);
@@ -38,7 +37,6 @@ for (url of book.content) {
 
 // Extract content.
 console.log('Extracting content.');
-child_process.spawnSync( 'mkdir', [ '-p', './output/html.processed/' ] ); 
 for (url of book.content) {
   var url_md5 = md5(url);
   console.log("\t" + url_md5);
