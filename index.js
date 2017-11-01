@@ -25,27 +25,33 @@ var ymlPath = process.argv[2];
 var yml = fs.readFileSync(ymlPath, 'utf-8');
 var book = yaml.load(yml)
 
-// Download HTML.
-console.log('Downloading HTML.');
+
+var count = book.content.length;
+
 for (url of book.content) {
-  console.log("\t" + url);
-  var url_md5 = md5(url);
-  if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
-    child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-  }
+  let url_md5 = md5(url);
+  console.log("Process " + url_md5 + ' ' + url);
+  // TODO: I deprecated.
+  fs.exists('./output/html/' + url_md5 + '.html', function(exists) {
+    if (!exists) {
+      console.log("\t download.");
+      var wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+      wget.on('close', (code) => {
+        parseFile(url_md5);
+      });
+    }
+    else {
+      console.log('Already downloaded: ' + url_md5);
+      parseFile(url_md5);
+    }
+  });
 }
 
-// Extract content.
-console.log('Extracting content.');
-for (url of book.content) {
-  var url_md5 = md5(url);
-  console.log("\t" + url_md5);
-  if (!fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-    //child_process.spawnSync( 'sh', [ '-c', 'cat ./output/html/' + url_md5 + '.html | node htmltidy.js | node readability.js >  ./output/html.processed/' + url_md5 + '.html' ] ); 
+function parseFile(url_md5) {
 
-    var html = fs.readFileSync('./output/html/' + url_md5 + '.html').toString();
+  fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
+    let html = data.toString();
 
-    // Parse HTML and output to console.
     readability(html, function(err, article, meta) {
     
       article.content = processContent(article.content);
@@ -53,29 +59,32 @@ for (url of book.content) {
       var twig = fs.readFileSync('./templates/article.html.twig').toString();
       var template = Twig.twig({ data: twig });
       var html_processed = template.render(article);
-      
+  
+      console.log('Parse ' + url_md5);
+  		fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
-      console.log('md5');
-      console.log(url_md5);
-      //console.log(html_processed);
-			fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
+      count--;
+      if (count == 0) {
+        createEpub();
+      }
     });
+  });
+}
 
+function createEpub() {
+  // Set metadata.
+  var twig = fs.readFileSync('./templates/epub-metadata.xml.twig').toString();
+  var template = Twig.twig({ data: twig });
+  var xml = template.render(book);
+  fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
+  
+  var filepaths = [];
+  for (url of book.content) {
+    var url_md5 = md5(url);
+    filepaths.push('./output/html.processed/' + url_md5 + '.html');
   }
+  // Create EPUB.
+  console.log('Create EPUB.')
+  console.log(filepaths);
+  child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
 }
-
-// Set metadata.
-var twig = fs.readFileSync('./templates/epub-metadata.xml.twig').toString();
-var template = Twig.twig({ data: twig });
-var xml = template.render(book);
-fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
-
-var filepaths = [];
-for (url of book.content) {
-  var url_md5 = md5(url);
-  filepaths.push('./output/html.processed/' + url_md5 + '.html');
-}
-
-// Create EPUB.
-console.log('Creating EPUB.')
-child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
