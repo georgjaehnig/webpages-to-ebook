@@ -43,7 +43,26 @@ for (url of book.content) {
   var url_md5 = md5(url);
   console.log("\t" + url_md5);
   if (!fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-    child_process.spawnSync( 'sh', [ '-c', 'cat ./output/html/' + url_md5 + '.html | node htmltidy.js | node readability.js >  ./output/html.processed/' + url_md5 + '.html' ] ); 
+    //child_process.spawnSync( 'sh', [ '-c', 'cat ./output/html/' + url_md5 + '.html | node htmltidy.js | node readability.js >  ./output/html.processed/' + url_md5 + '.html' ] ); 
+
+    var html = fs.readFileSync('./output/html/' + url_md5 + '.html').toString();
+
+    // Parse HTML and output to console.
+    readability(html, function(err, article, meta) {
+    
+      article.content = processContent(article.content);
+    
+      var twig = fs.readFileSync('./templates/article.html.twig').toString();
+      var template = Twig.twig({ data: twig });
+      var html_processed = template.render(article);
+      
+
+      console.log('md5');
+      console.log(url_md5);
+      //console.log(html_processed);
+			fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
+    });
+
   }
 }
 
