@@ -56,6 +56,8 @@ function parseFile(url_md5) {
     
       article.content = processContent(article.content);
     
+      // TODO:
+      // Call this only once.
       var twig = fs.readFileSync('./templates/article.html.twig').toString();
       var template = Twig.twig({ data: twig });
       var html_processed = template.render(article);
@@ -64,6 +66,8 @@ function parseFile(url_md5) {
   		fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
       count--;
+
+      // When parsed all files.
       if (count == 0) {
         createEpub();
       }
@@ -72,6 +76,7 @@ function parseFile(url_md5) {
 }
 
 function createEpub() {
+
   // Set metadata.
   var twig = fs.readFileSync('./templates/epub-metadata.xml.twig').toString();
   var template = Twig.twig({ data: twig });
@@ -83,8 +88,11 @@ function createEpub() {
     var url_md5 = md5(url);
     filepaths.push('./output/html.processed/' + url_md5 + '.html');
   }
+
   // Create EPUB.
   console.log('Create EPUB.')
   console.log(filepaths);
   child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
+  // TODO:
+  // Output exit status.
 }
