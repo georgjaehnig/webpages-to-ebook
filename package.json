@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "deepmerge": "^2.0.1",
     "htmltidy2": "^0.2.1",
     "js-yaml": "^3.9.1",
     "md5": "^2.2.1",
