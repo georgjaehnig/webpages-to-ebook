@@ -77,7 +77,7 @@ function parseFile(url_md5) {
 }
 
 function modifyContent(content) {
-  if (!content in book.modify) {
+  if (typeof book.modify.content === 'undefined') {
     return content; 
   }
   for (let modify of book.modify.content) {
