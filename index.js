@@ -69,8 +69,11 @@ function parseFile(url_md5) {
     }
 
     readability(html, function(err, article, meta) {
-      article.content = modifyContent(article.content);
-      let html_processed = template.render(article);
+      let articleCopy = {};
+      articleCopy.title = article.title;
+      articleCopy.content = article.content;
+      modify(articleCopy);
+      let html_processed = template.render(articleCopy);
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
       decreaseCount();
@@ -78,18 +81,18 @@ function parseFile(url_md5) {
   });
 }
 
-function modifyContent(content) {
+function modify(article) {
+
   if (typeof book.modify === 'undefined') {
-    return content; 
+    return; 
   }
-  if (typeof book.modify.content === 'undefined') {
-    return content; 
+  for (key in book.modify) {
+    for (let modify of book.modify[key]) {
+      let searchRegExp = new RegExp(modify.search, modify.flags || '' );
+      article[key] = article[key].replace(searchRegExp, modify.replace);
+    }
   }
-  for (let modify of book.modify.content) {
-    let searchRegExp = new RegExp(modify.search);
-    content = content.replace(searchRegExp, modify.replace);
-  }
-  return content;
+
 }
 
 function decreaseCount() {
