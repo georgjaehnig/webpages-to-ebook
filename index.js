@@ -29,16 +29,13 @@ for (let url of book.content) {
   // TODO: Deprecated.
   if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
     console.log(url_md5 + ': downloading.');
-    let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-    wget.on('close', (code) => {
-      console.log(url_md5 + ': downloaded.');
-      parseFile(url_md5);
-    });
+    child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+    console.log(url_md5 + ': downloaded.');
   }
   else {
     console.log(url_md5 + ': already downloaded.');
-    parseFile(url_md5);
   }
+  parseFile(url_md5);
 }
 
 function readDefinitions() {
