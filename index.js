@@ -33,27 +33,27 @@ for (let url of book.content) {
   console.log(url_md5 + ': processing, URL: ' + url);
   // TODO: I deprecated.
   if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
-		console.log(url_md5 + ': downloading.');
-		let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-		wget.on('close', (code) => {
-			console.log(url_md5 + ': downloaded.');
-			parseFile(url_md5);
-		});
-	}
-	else {
-		console.log(url_md5 + ': already downloaded.');
-		parseFile(url_md5);
-	}
+    console.log(url_md5 + ': downloading.');
+    let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+    wget.on('close', (code) => {
+      console.log(url_md5 + ': downloaded.');
+      parseFile(url_md5);
+    });
+  }
+  else {
+    console.log(url_md5 + ': already downloaded.');
+    parseFile(url_md5);
+  }
 }
 
 function parseFile(url_md5) {
 
   fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
     let html = data.toString();
-  	if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-			decreaseCount();
-			return;
-		}
+    if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
+      decreaseCount();
+      return;
+    }
 
     readability(html, function(err, article, meta) {
     
@@ -66,19 +66,19 @@ function parseFile(url_md5) {
       var html_processed = template.render(article);
   
       console.log(url_md5 + ': extracting content.');
-  		fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
+      fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
-			decreaseCount();
+      decreaseCount();
     });
   });
 }
 
 function decreaseCount() {
-	count--;
-	// When parsed all files.
-	if (count == 0) {
-		createEpub();
-	}
+  count--;
+  // When parsed all files.
+  if (count == 0) {
+    createEpub();
+  }
 }
 
 function createEpub() {
