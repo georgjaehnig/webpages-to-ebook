@@ -25,6 +25,9 @@ var ymlPath = process.argv[2];
 var yml = fs.readFileSync(ymlPath, 'utf-8');
 var book = yaml.load(yml)
 
+// Get template.
+let twig = fs.readFileSync('./templates/article.html.twig').toString();
+var template = Twig.twig({ data: twig });
 
 var count = book.content.length;
 
@@ -59,12 +62,8 @@ function parseFile(url_md5) {
     
       article.content = processContent(article.content);
     
-      // TODO:
-      // Call this only once.
-      var twig = fs.readFileSync('./templates/article.html.twig').toString();
-      var template = Twig.twig({ data: twig });
-      var html_processed = template.render(article);
-  
+      let html_processed = template.render(article);
+
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
