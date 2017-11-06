@@ -1,10 +1,9 @@
-var fs = require('fs');
-var yaml = require('js-yaml');
-var md5 = require('md5');
-var Twig = require('twig');
+const fs = require('fs');
+const yaml = require('js-yaml');
+const md5 = require('md5');
+const Twig = require('twig');
 const child_process = require( 'child_process' );
-
-var readability = require('node-readability');
+const readability = require('node-readability');
 
 var processContent = function(content) {
   content = content.replace(/(<img .*?)>/g, '$1/>');
