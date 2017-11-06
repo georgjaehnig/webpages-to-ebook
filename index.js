@@ -20,10 +20,7 @@ if (process.argv.length < 3) {
   process.exit();
 }
 
-// Read definition.
-var ymlPath = process.argv[2];
-var yml = fs.readFileSync(ymlPath, 'utf-8');
-var book = yaml.load(yml)
+var book = readDefinitions();
 
 // Get template.
 let twig = fs.readFileSync('./templates/article.html.twig').toString();
@@ -47,6 +44,12 @@ for (let url of book.content) {
     console.log(url_md5 + ': already downloaded.');
     parseFile(url_md5);
   }
+}
+
+function readDefinitions() {
+  let ymlPath = process.argv[2];
+  let yml = fs.readFileSync(ymlPath, 'utf-8');
+  let book = yaml.load(yml)
 }
 
 function parseFile(url_md5) {
