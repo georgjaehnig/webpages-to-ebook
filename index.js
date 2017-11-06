@@ -65,7 +65,7 @@ function parseFile(url_md5) {
     }
 
     readability(html, function(err, article, meta) {
-      article.content = processContent(article.content);
+      article.content = modifyContent(article.content);
       let html_processed = template.render(article);
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
@@ -74,7 +74,7 @@ function parseFile(url_md5) {
   });
 }
 
-function processContent(content) {
+function modifyContent(content) {
   if (!content in book.modify) {
     return content; 
   }
