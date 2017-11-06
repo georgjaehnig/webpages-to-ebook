@@ -52,6 +52,14 @@ function parseFile(url_md5) {
 
   fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
     let html = data.toString();
+  	if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
+      count--;
+      // When parsed all files.
+      if (count == 0) {
+        createEpub();
+      }
+			return;
+		}
 
     readability(html, function(err, article, meta) {
     
