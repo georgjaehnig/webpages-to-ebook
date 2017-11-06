@@ -32,20 +32,18 @@ for (let url of book.content) {
   let url_md5 = md5(url);
   console.log(url_md5 + ': processing, URL: ' + url);
   // TODO: I deprecated.
-  fs.exists('./output/html/' + url_md5 + '.html', function(exists) {
-    if (!exists) {
-      console.log(url_md5 + ': downloading.');
-      let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-      wget.on('close', (code) => {
-      	console.log(url_md5 + ': downloaded.');
-        parseFile(url_md5);
-      });
-    }
-    else {
-      console.log(url_md5 + ': already downloaded.');
-      parseFile(url_md5);
-    }
-  });
+  if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
+		console.log(url_md5 + ': downloading.');
+		let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+		wget.on('close', (code) => {
+			console.log(url_md5 + ': downloaded.');
+			parseFile(url_md5);
+		});
+	}
+	else {
+		console.log(url_md5 + ': already downloaded.');
+		parseFile(url_md5);
+	}
 }
 
 function parseFile(url_md5) {
