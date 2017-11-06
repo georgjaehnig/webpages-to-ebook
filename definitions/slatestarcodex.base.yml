@@ -1,1 +1,9 @@
 author: Scott Alexander
+modify:
+  content:
+  - search: (<img .*?)>
+    flags: g
+    replace: $1/>
+  - search: <br>
+    flags: g
+    replace: <br/>
