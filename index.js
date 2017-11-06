@@ -28,14 +28,14 @@ var book = yaml.load(yml)
 
 var count = book.content.length;
 
-for (url of book.content) {
+for (let url of book.content) {
   let url_md5 = md5(url);
   console.log("Process " + url_md5 + ' ' + url);
   // TODO: I deprecated.
   fs.exists('./output/html/' + url_md5 + '.html', function(exists) {
     if (!exists) {
       console.log("\t download.");
-      var wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
+      let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
       wget.on('close', (code) => {
         parseFile(url_md5);
       });
