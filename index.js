@@ -64,6 +64,9 @@ function parseFile(url_md5) {
       decreaseCount();
       return;
     }
+    if (err) {
+      console.log('Error reading ' . url_md5); 
+    }
 
     readability(html, function(err, article, meta) {
       article.content = modifyContent(article.content);
