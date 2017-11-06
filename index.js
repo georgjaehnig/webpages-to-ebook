@@ -2,6 +2,7 @@ var fs = require('fs');
 var yaml = require('js-yaml');
 var md5 = require('md5');
 var Twig = require('twig');
+const child_process = require( 'child_process' );
 
 var readability = require('node-readability');
 
@@ -11,7 +12,6 @@ var processContent = function(content) {
   return content;
 }
 
-const child_process = require( 'child_process' );
 
 // Parse arguments.
 if (process.argv.length < 3) {
