@@ -51,11 +51,7 @@ function parseFile(url_md5) {
   fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
     let html = data.toString();
   	if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-      count--;
-      // When parsed all files.
-      if (count == 0) {
-        createEpub();
-      }
+			decreaseCount();
 			return;
 		}
 
@@ -72,14 +68,17 @@ function parseFile(url_md5) {
       console.log(url_md5 + ': extracting content.');
   		fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
-      count--;
-
-      // When parsed all files.
-      if (count == 0) {
-        createEpub();
-      }
+			decreaseCount();
     });
   });
+}
+
+function decreaseCount() {
+	count--;
+	// When parsed all files.
+	if (count == 0) {
+		createEpub();
+	}
 }
 
 function createEpub() {
