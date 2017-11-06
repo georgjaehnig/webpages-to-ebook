@@ -59,14 +59,10 @@ function parseFile(url_md5) {
     }
 
     readability(html, function(err, article, meta) {
-    
       article.content = processContent(article.content);
-    
       let html_processed = template.render(article);
-
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
-
       decreaseCount();
     });
   });
