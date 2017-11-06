@@ -30,18 +30,19 @@ var count = book.content.length;
 
 for (let url of book.content) {
   let url_md5 = md5(url);
-  console.log("Process " + url_md5 + ' ' + url);
+  console.log(url_md5 + ': processing, URL: ' + url);
   // TODO: I deprecated.
   fs.exists('./output/html/' + url_md5 + '.html', function(exists) {
     if (!exists) {
-      console.log("\t download.");
+      console.log(url_md5 + ': downloading.');
       let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
       wget.on('close', (code) => {
+      	console.log(url_md5 + ': downloaded.');
         parseFile(url_md5);
       });
     }
     else {
-      console.log('Already downloaded: ' + url_md5);
+      console.log(url_md5 + ': already downloaded.');
       parseFile(url_md5);
     }
   });
@@ -62,7 +63,7 @@ function parseFile(url_md5) {
       var template = Twig.twig({ data: twig });
       var html_processed = template.render(article);
   
-      console.log('Parse ' + url_md5);
+      console.log(url_md5 + ': extracting content.');
   		fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
 
       count--;
@@ -90,11 +91,9 @@ function createEpub() {
   }
 
   // Create EPUB.
-  console.log('Create EPUB with:')
-  for (filepath of filepaths) {
-  	console.log("\t" + filepath);
-  }
+  console.log('Creating EPUB...')
   child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
   // TODO:
   // Output exit status.
+  console.log('Done.')
 }
