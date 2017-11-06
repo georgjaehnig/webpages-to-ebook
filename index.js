@@ -7,8 +7,13 @@ const readability = require('node-readability');
 const deepmerge = require('deepmerge');
 
 var processContent = function(content) {
-  content = content.replace(/(<img .*?)>/g, '$1/>');
-  content = content.replace(/<br>/g, '<br/>');
+  if (!content in book.modify) {
+    return content; 
+  }
+  for (let modify of book.modify.content) {
+    let searchRegExp = new RegExp(modify.search);
+    content = content.replace(searchRegExp, modify.replace);
+  }
   return content;
 }
 
