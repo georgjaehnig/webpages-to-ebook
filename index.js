@@ -4,6 +4,7 @@ const md5 = require('md5');
 const Twig = require('twig');
 const child_process = require( 'child_process' );
 const readability = require('node-readability');
+const deepmerge = require('deepmerge');
 
 var processContent = function(content) {
   content = content.replace(/(<img .*?)>/g, '$1/>');
@@ -15,7 +16,8 @@ var processContent = function(content) {
 // Parse arguments.
 if (process.argv.length < 3) {
   console.log('Usage:');
-  console.log(process.argv[1] + ' definition.yml');
+  console.log(process.argv[1] + ' definition.yml [definition2.yml]');
+  console.log('(The rightmost will override all previous.)');
   process.exit();
 }
 
@@ -46,9 +48,16 @@ for (let url of book.content) {
 }
 
 function readDefinitions() {
-  let ymlPath = process.argv[2];
-  let yml = fs.readFileSync(ymlPath, 'utf-8');
-  let book = yaml.load(yml)
+  let ymlPaths = process.argv.slice(2);
+  let book = {};
+
+  while (ymlPaths.length > 0) {
+    let ymlPath = ymlPaths.shift();
+    let yml = fs.readFileSync(ymlPath, 'utf-8');
+    let currentBook = yaml.load(yml);
+    book = deepmerge(book, currentBook);
+
+  }
   return book;
 }
 
