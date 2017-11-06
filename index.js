@@ -31,7 +31,7 @@ var count = book.content.length;
 for (let url of book.content) {
   let url_md5 = md5(url);
   console.log(url_md5 + ': processing, URL: ' + url);
-  // TODO: I deprecated.
+  // TODO: Deprecated.
   if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
     console.log(url_md5 + ': downloading.');
     let wget = child_process.spawn( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
