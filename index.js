@@ -6,17 +6,6 @@ const child_process = require( 'child_process' );
 const readability = require('node-readability');
 const deepmerge = require('deepmerge');
 
-function processContent(content) {
-  if (!content in book.modify) {
-    return content; 
-  }
-  for (let modify of book.modify.content) {
-    let searchRegExp = new RegExp(modify.search);
-    content = content.replace(searchRegExp, modify.replace);
-  }
-  return content;
-}
-
 
 // Parse arguments.
 if (process.argv.length < 3) {
@@ -83,6 +72,17 @@ function parseFile(url_md5) {
       decreaseCount();
     });
   });
+}
+
+function processContent(content) {
+  if (!content in book.modify) {
+    return content; 
+  }
+  for (let modify of book.modify.content) {
+    let searchRegExp = new RegExp(modify.search);
+    content = content.replace(searchRegExp, modify.replace);
+  }
+  return content;
 }
 
 function decreaseCount() {
