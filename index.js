@@ -50,6 +50,7 @@ function readDefinitions() {
   let ymlPath = process.argv[2];
   let yml = fs.readFileSync(ymlPath, 'utf-8');
   let book = yaml.load(yml)
+  return book;
 }
 
 function parseFile(url_md5) {
