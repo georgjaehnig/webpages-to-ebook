@@ -6,7 +6,7 @@ const child_process = require( 'child_process' );
 const readability = require('node-readability');
 const deepmerge = require('deepmerge');
 
-var processContent = function(content) {
+function processContent(content) {
   if (!content in book.modify) {
     return content; 
   }
