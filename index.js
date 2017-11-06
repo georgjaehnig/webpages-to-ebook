@@ -16,7 +16,7 @@ const child_process = require( 'child_process' );
 // Parse arguments.
 if (process.argv.length < 3) {
   console.log('Usage:');
-  console.log(process.argv[1] + ' settings.yml');
+  console.log(process.argv[1] + ' definition.yml');
   process.exit();
 }
 
