@@ -63,3 +63,6 @@ output/
 
 # Old material.
 material/
+
+# Don't add new definitions.
+definitions/
