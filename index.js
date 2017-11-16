@@ -72,11 +72,8 @@ function parseFile(url_md5) {
       if (err) {
         console.log(url_md5 + ': Warning: Error on parsing. Source URL may be empty.');
       }
-      let articleCopy = {};
-      articleCopy.title = article.title;
-      articleCopy.content = article.content;
-      modify(articleCopy);
-      let html_processed = template.render(articleCopy);
+      modify(article);
+      let html_processed = template.render(article);
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
       decreaseCount();
