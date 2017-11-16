@@ -1,4 +1,9 @@
 shortname: consequentialism
 title: Consequentialism
+modify:
+  content:
+  - search: '�'
+    replace: '"'
+    flags: g
 content:
 - https://web.archive.org/web/20161115073538/http://raikoth.net/consequentialism.html
