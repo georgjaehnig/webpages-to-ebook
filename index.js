@@ -75,8 +75,11 @@ function parseFile(url_md5) {
         decreaseCount();
         return;
       }
-      modify(article);
-      let html_processed = template.render(article);
+      let articleCopy = {};
+      articleCopy.title = article.title;
+      articleCopy.content = article.content;
+      modify(articleCopy);
+      let html_processed = template.render(articleCopy);
       console.log(url_md5 + ': extracting content.');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
       decreaseCount();
