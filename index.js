@@ -70,7 +70,10 @@ function parseFile(url_md5) {
 
     readability(html, function(err, article, meta) {
       if (err) {
-        console.log(url_md5 + ': Warning: Error on parsing. Source URL may be empty.');
+        console.log(url_md5 + ': Error on parsing. Skipping file.');
+        fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', '');
+        decreaseCount();
+        return;
       }
       modify(article);
       let html_processed = template.render(article);
