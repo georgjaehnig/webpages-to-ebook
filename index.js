@@ -70,9 +70,7 @@ function parseFile(url_md5) {
 
     readability(html, function(err, article, meta) {
 			if (err) {
-				console.log(url_md5 + ': Error on parsing. Source URL may be empty.')	
-				console.log('Aborting.')	
-				process.exit();
+				console.log(url_md5 + ': Warning: Error on parsing. Source URL may be empty.');
 			}
       let articleCopy = {};
       articleCopy.title = article.title;
