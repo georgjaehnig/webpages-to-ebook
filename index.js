@@ -61,6 +61,7 @@ function parseFile(url_md5) {
   fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
     let html = data.toString();
     if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
+      console.log(url_md5 + ': already extracted content.');
       decreaseCount();
       return;
     }
