@@ -1,4 +1,5 @@
 author: Scott Alexander
+language: en-US
 modify:
   content:
   - search: (<img .*?)>
