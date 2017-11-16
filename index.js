@@ -69,9 +69,9 @@ function parseFile(url_md5) {
     }
 
     readability(html, function(err, article, meta) {
-			if (err) {
-				console.log(url_md5 + ': Warning: Error on parsing. Source URL may be empty.');
-			}
+      if (err) {
+        console.log(url_md5 + ': Warning: Error on parsing. Source URL may be empty.');
+      }
       let articleCopy = {};
       articleCopy.title = article.title;
       articleCopy.content = article.content;
