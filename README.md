@@ -22,8 +22,8 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 
 - Node.js
 - NPM
-- [Wget](https://www.gnu.org/software/wget/) 
-- [Pandoc](https://pandoc.org/)
+- [Wget](https://www.gnu.org/software/wget/): `wget` has to be in `PATH`.
+- [Pandoc](https://pandoc.org/): `pandoc` has to be in `PATH`.
 
 ### Install
 
