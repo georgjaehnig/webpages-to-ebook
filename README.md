@@ -12,6 +12,8 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 - [`slatestarcodex.year.2014.epub`](https://drive.google.com/open?id=0B73-tppgbUreZExTZ1hOdHdWMjg), created from [`definitions/slatestarcodex.year.2014.yml`](definitions/slatestarcodex.year.2014.yml)
 - [`slatestarcodex.year.2013.epub`](https://drive.google.com/open?id=0B73-tppgbUredzNjY0xPbmNOVms), created from [`definitions/slatestarcodex.year.2013.yml`](definitions/slatestarcodex.year.2013.yml)
 - [`slatestarcodex.top.epub`](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), created from [`definitions/slatestarcodex.top.yml`](definitions/slatestarcodex.top.yml)
+- [`slatestarcodex.top.more.epub`](https://drive.google.com/open?id=12JMJOpV_SazxNPhrCptk0hydJPrrJH4M), created from [`definitions/slatestarcodex.top.more.yml`](definitions/slatestarcodex.top.more.yml)
+
 
 
 ## Create your own ebooks
