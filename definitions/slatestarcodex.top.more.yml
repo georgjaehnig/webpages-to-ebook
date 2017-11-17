@@ -1,5 +1,7 @@
 shortname: slatestarcodex.top.more
 title: SlateStarCodex More Top Posts
+# Based on older version of Top Posts page:
+# https://web.archive.org/web/20170831162117/http://slatestarcodex.com/top-posts/
 content:
 - http://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/?comments=false
 - http://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/?comments=false
