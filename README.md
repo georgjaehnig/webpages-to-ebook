@@ -33,5 +33,5 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 ### Usage
 
 1. Create a definition, like the examples in `definitions/`.
-2. `node index.js your-created-definition.yml`
+2. `node index.js your-created-definition.yml [optional-definition-to-be-merged-with-the-first.yml]`
 3. Find your EPUB in `output/epub/`.
