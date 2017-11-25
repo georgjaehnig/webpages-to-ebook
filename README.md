@@ -28,6 +28,7 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 ### Install
 
     git clone https://github.com/georgjaehnig/webpages-to-ebook.git
+    cd webpages-to-ebook
     npm install
 
 ### Usage
