@@ -25,7 +25,7 @@ var count = book.content.length;
 
 for (let url of book.content) {
   let url_md5 = md5(url);
-  console.log(url_md5 + ': processing, URL: ' + url);
+  console.log(url_md5 + "\t" + 'processing'+ "\t" + url);
   ensureRawFile(url, url_md5);
   parseFile(url_md5);
 }
@@ -47,12 +47,12 @@ function readDefinitions() {
 function ensureRawFile(url, url_md5) {
   // TODO: Deprecated.
   if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
-    console.log(url_md5 + ': downloading.');
+    console.log(url_md5 + "\t" + 'downloading');
     child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-    console.log(url_md5 + ': downloaded.');
+    console.log(url_md5 + "\t" + 'downloaded');
   }
   else {
-    console.log(url_md5 + ': already downloaded.');
+    console.log(url_md5 + "\t" + 'already downloaded');
   }
 }
 
@@ -61,12 +61,12 @@ function parseFile(url_md5) {
   fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
     let html = data.toString();
     if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-      console.log(url_md5 + ': already extracted content.');
+      console.log(url_md5 + "\t" + 'already extracted content');
       decreaseCount();
       return;
     }
     if (err) {
-      console.log('Error reading ' . url_md5); 
+      console.log(url_md5 + "\t" + 'read error'); 
     }
 
     readability(html, function(err, article, meta) {
@@ -81,7 +81,7 @@ function parseFile(url_md5) {
       articleCopy.content = article.content;
       modify(articleCopy);
       let html_processed = template.render(articleCopy);
-      console.log(url_md5 + ': extracting content.');
+      console.log(url_md5 + "\t" + 'extracting content');
       fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
       decreaseCount();
     });
