@@ -6,28 +6,36 @@ const child_process = require( 'child_process' );
 const readability = require('node-readability');
 const deepmerge = require('deepmerge');
 
+var book;
+var count;
+var template;
 
-// Parse arguments.
-if (process.argv.length < 3) {
-  console.log('Usage:');
-  console.log(process.argv[1] + ' definition.yml [definition2.yml]');
-  console.log('(The rightmost will override all previous.)');
-  process.exit();
-}
+main();
 
-var book = readDefinitions();
+function main() {
 
-// Get template.
-let twig = fs.readFileSync('./templates/article.html.twig').toString();
-var template = Twig.twig({ data: twig });
-
-var count = book.content.length;
-
-for (let url of book.content) {
-  let url_md5 = md5(url);
-  console.log(url_md5 + "\t" + 'processing'+ "\t" + url);
-  ensureRawFile(url, url_md5);
-  parseFile(url_md5);
+  // Parse arguments.
+  if (process.argv.length < 3) {
+    console.log('Usage:');
+    console.log(process.argv[1] + ' definition.yml [definition2.yml]');
+    console.log('(The rightmost will override all previous.)');
+    process.exit();
+  }
+  
+  book = readDefinitions();
+  
+  // Get template.
+  let twig = fs.readFileSync('./templates/article.html.twig').toString();
+  template = Twig.twig({ data: twig });
+  
+  count = book.content.length;
+  
+  for (let url of book.content) {
+    let url_md5 = md5(url);
+    console.log(url_md5 + "\t" + 'processing'+ "\t" + url);
+    ensureRawFile(url, url_md5);
+    parseFile(url_md5);
+  }
 }
 
 function readDefinitions() {
