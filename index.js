@@ -19,7 +19,7 @@ function main() {
     console.log('Usage:');
     console.log(process.argv[1] + ' definition.yml [definition2.yml]');
     console.log('(The rightmost will override all previous.)');
-    process.exit();
+    return;
   }
   
   book = readDefinitions();
