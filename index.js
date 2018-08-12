@@ -30,11 +30,28 @@ function main() {
   
   count = book.content.length;
   
-  for (let url of book.content) {
-    let url_md5 = md5(url);
-    console.log(url_md5 + "\t" + 'processing'+ "\t" + url);
-    ensureRawFile(url, url_md5);
-    parseFile(url_md5);
+  for (let item of book.content) {
+    
+    let content = {};
+
+    // If a string:
+    // assume it's a URL.
+    if (typeof(item) == 'string') {
+      content['url'] = item;
+    }
+    else {
+      content = item;
+    }
+
+    if (content['url']) {
+      content['hash'] = md5(content['url']);
+      console.log(content['hash'] + "\t" + 'processing'+ "\t" + content['url']);
+      ensureRawFile(content['url'], content['hash']);
+      parseFile(content['hash']);
+    }
+    else {
+      count--;
+    }
   }
 }
 
