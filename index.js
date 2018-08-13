@@ -9,6 +9,7 @@ const deepmerge = require('deepmerge');
 var book;
 var count;
 var template;
+var hashes = [];
 
 main();
 
@@ -44,14 +45,16 @@ function main() {
     }
 
     if (content['url']) {
-      content['hash'] = md5(content['url']);
-      console.log(content['hash'] + "\t" + 'processing'+ "\t" + content['url']);
-      ensureRawFile(content['url'], content['hash']);
-      parseFile(content['hash']);
+      let hash = md5(content['url']);
+      console.log(hash + "\t" + 'processing'+ "\t" + content['url']);
+      hashes.push(hash);
+      ensureRawFile(content['url'], hash);
+      parseFile(hash);
     }
     else if (content['raw']) {
       let hash = md5(content['raw']);
       console.log(hash + "\t" + 'writing raw content to file');
+      hashes.push(hash);
       fs.writeFileSync('./output/html.processed/' + hash + '.html', content['raw']);
       decreaseCount();
     }
@@ -150,9 +153,8 @@ function createEpub() {
   fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
   
   var filepaths = [];
-  for (url of book.content) {
-    var url_md5 = md5(url);
-    filepaths.push('./output/html.processed/' + url_md5 + '.html');
+  for (let hash of hashes) {
+    filepaths.push('./output/html.processed/' + hash + '.html');
   }
 
   // Create EPUB.
