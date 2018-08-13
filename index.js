@@ -49,8 +49,11 @@ function main() {
       ensureRawFile(content['url'], content['hash']);
       parseFile(content['hash']);
     }
+    else if (content['raw']) {
+      decreaseCount();
+    }
     else {
-      count--;
+      decreaseCount();
     }
   }
 }
