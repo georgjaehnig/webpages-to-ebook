@@ -49,7 +49,7 @@ function main() {
       console.log(hash + "\t" + 'processing'+ "\t" + content['url']);
       hashes.push(hash);
       ensureRawFile(content['url'], hash);
-      parseFile(hash);
+      parseFile(content['url'], hash);
     }
     else if (content['raw']) {
       let hash = md5(content['raw']);
@@ -113,6 +113,7 @@ function parseFile(url, hash) {
       let articleCopy = {};
       articleCopy.title = article.title;
       articleCopy.content = article.content;
+      articleCopy.url = url;
       modify(articleCopy);
       let html_processed = template.render(articleCopy);
       console.log(hash + "\t" + 'extracting content');
