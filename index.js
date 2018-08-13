@@ -50,6 +50,9 @@ function main() {
       parseFile(content['hash']);
     }
     else if (content['raw']) {
+      let hash = md5(content['raw']);
+      console.log(hash + "\t" + 'writing raw content to file');
+      fs.writeFileSync('./output/html.processed/' + hash + '.html', content['raw']);
       decreaseCount();
     }
     else {
