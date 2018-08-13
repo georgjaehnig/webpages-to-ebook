@@ -78,35 +78,35 @@ function readDefinitions() {
   return book;
 }
 
-function ensureRawFile(url, url_md5) {
+function ensureRawFile(url, hash) {
   // TODO: Deprecated.
-  if (!fs.existsSync('./output/html/' + url_md5 + '.html')) {
-    console.log(url_md5 + "\t" + 'downloading');
-    child_process.spawnSync( 'wget', [ '-O', './output/html/' + url_md5 + '.html', '--convert-links', url ] ); 
-    console.log(url_md5 + "\t" + 'downloaded');
+  if (!fs.existsSync('./output/html/' + hash + '.html')) {
+    console.log(hash + "\t" + 'downloading');
+    child_process.spawnSync( 'wget', [ '-O', './output/html/' + hash + '.html', '--convert-links', url ] ); 
+    console.log(hash + "\t" + 'downloaded');
   }
   else {
-    console.log(url_md5 + "\t" + 'already downloaded');
+    console.log(hash + "\t" + 'already downloaded');
   }
 }
 
-function parseFile(url_md5) {
+function parseFile(url, hash) {
 
-  fs.readFile('./output/html/' + url_md5 + '.html', (err, data) => {
+  fs.readFile('./output/html/' + hash + '.html', (err, data) => {
     let html = data.toString();
-    if (fs.existsSync('./output/html.processed/' + url_md5 + '.html')) {
-      console.log(url_md5 + "\t" + 'already extracted content');
+    if (fs.existsSync('./output/html.processed/' + hash + '.html')) {
+      console.log(hash + "\t" + 'already extracted content');
       decreaseCount();
       return;
     }
     if (err) {
-      console.log(url_md5 + "\t" + 'read error'); 
+      console.log(hash + "\t" + 'read error'); 
     }
 
     readability(html, function(err, article, meta) {
       if (err) {
-        console.log(url_md5 + ': Error on parsing. Skipping file.');
-        fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', '');
+        console.log(hash + ': Error on parsing. Skipping file.');
+        fs.writeFileSync('./output/html.processed/' + hash + '.html', '');
         decreaseCount();
         return;
       }
@@ -115,8 +115,8 @@ function parseFile(url_md5) {
       articleCopy.content = article.content;
       modify(articleCopy);
       let html_processed = template.render(articleCopy);
-      console.log(url_md5 + "\t" + 'extracting content');
-      fs.writeFileSync('./output/html.processed/' + url_md5 + '.html', html_processed);
+      console.log(hash + "\t" + 'extracting content');
+      fs.writeFileSync('./output/html.processed/' + hash + '.html', html_processed);
       decreaseCount();
     });
   });
