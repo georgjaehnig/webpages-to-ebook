@@ -65,7 +65,12 @@ function main() {
 }
 
 function readDefinitions() {
+	
   let ymlPaths = process.argv.slice(2);
+	
+	// Defaults.
+	ymlPaths.unshift(__dirname + '/definitions/defaults.yml');
+
   let book = {};
 
   while (ymlPaths.length > 0) {
