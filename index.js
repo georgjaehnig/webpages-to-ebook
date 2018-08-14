@@ -119,6 +119,7 @@ function parseFile(url, hash) {
       articleCopy.title = article.title;
       articleCopy.content = article.content;
       articleCopy.url = url;
+      articleCopy.tags = book.tags;
       modify(articleCopy);
       let html_processed = template.render(articleCopy);
       console.log(hash + "\t" + 'extracting content');
