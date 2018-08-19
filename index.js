@@ -24,6 +24,11 @@ function main() {
   }
   
   book = readDefinitions();
+
+  if (!book.metadata) {
+    console.log('Error: "metadata" key is missing in definition.');
+    return;  
+  }
   
   // Get template.
   let twig = fs.readFileSync('./templates/article.html.twig').toString();
@@ -154,10 +159,13 @@ function decreaseCount() {
 function createEpub() {
 
   // Set metadata.
-  var twig = fs.readFileSync('./templates/epub-metadata.xml.twig').toString();
-  var template = Twig.twig({ data: twig });
-  var xml = template.render(book);
-  fs.writeFileSync('./output/meta/' + book.shortname + '.xml', xml)
+  let metadataStr = '';
+  for (let prefix in book.metadata) {
+    for (let key in book.metadata[prefix]) {
+      metadataStr += '<' + prefix + ':' + key + '>' + book.metadata[prefix][key] + '</' + prefix + ':' + key + '>' ;
+    }
+  }
+  fs.writeFileSync('./output/meta/' + book.shortname + '.xml', metadataStr)
   
   var filepaths = [];
   for (let hash of hashes) {
