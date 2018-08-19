@@ -16,14 +16,6 @@ main();
 
 function main() {
 
-  // Check for dependencies in PATH.
-  for (let command of ['wget','pandoc']) {
-    if (!commandExistsSync(command)) {
-      console.log('"' + command + '" is missing in (current) PATH.');
-      return; 
-    }
-  }
-
   // Parse arguments.
   if (process.argv.length < 3) {
     console.log('Usage:');
@@ -33,6 +25,14 @@ function main() {
   }
   
   book = readDefinitions();
+
+  // Check for dependencies in PATH.
+  for (let command of [book.commands.wget, book.commands.pandoc]) {
+    if (!commandExistsSync(command)) {
+      console.log('"' + command + '" is missing in (current) PATH. (If its name is different on your system, edit definitions/defaults.yml.)');
+      return; 
+    }
+  }
 
   if (!book.metadata) {
     console.log('Error: "metadata" key is missing in definition.');
@@ -101,7 +101,7 @@ function ensureRawFile(url, hash) {
   // TODO: Deprecated.
   if (!fs.existsSync('./output/html/' + hash + '.html')) {
     console.log(hash + "\t" + 'downloading');
-    child_process.spawnSync( 'wget', [ '-O', './output/html/' + hash + '.html', '--convert-links', url ] ); 
+    child_process.spawnSync( book.commands.wget, [ '-O', './output/html/' + hash + '.html', '--convert-links', url ] ); 
     console.log(hash + "\t" + 'downloaded');
   }
   else {
@@ -183,7 +183,7 @@ function createEpub() {
 
   // Create EPUB.
   console.log('Creating EPUB...')
-  child_process.spawnSync( 'pandoc', [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
+  child_process.spawnSync( book.commands.pandoc, [ '--from', 'html', '-o', './output/epub/' + book.shortname + '.epub', '--epub-metadata', './output/meta/' + book.shortname + '.xml' ].concat(filepaths) );
   // TODO:
   // Output exit status.
   console.log('Done.')

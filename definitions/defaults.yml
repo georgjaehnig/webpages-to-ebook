@@ -1,2 +1,5 @@
+commands:
+  wget: wget
+  pandoc: pandoc
 tags:
   title: h1
