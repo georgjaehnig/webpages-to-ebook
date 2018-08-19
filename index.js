@@ -115,13 +115,13 @@ function parseFile(url, hash) {
         decreaseCount();
         return;
       }
-      let articleCopy = {};
-      articleCopy.title = article.title;
-      articleCopy.content = article.content;
-      articleCopy.url = url;
-      articleCopy.tags = book.tags;
-      modify(articleCopy);
-      let html_processed = template.render(articleCopy);
+      let context = {};
+      context.title = article.title;
+      context.content = article.content;
+      context.url = url;
+      context.tags = book.tags;
+      modify(context);
+      let html_processed = template.render(context);
       console.log(hash + "\t" + 'extracting content');
       fs.writeFileSync('./output/html.processed/' + hash + '.html', html_processed);
       decreaseCount();
