@@ -4,58 +4,68 @@ metadata:
     title: Library of Scott Alexandria
     creator: Scott Alexander
     language: en-US
-# I've put together a list of what I think are the best Yvain (Scott Alexander) posts for new readers, drawing from SlateStarCodex, LessWrong, and Scott's LiveJournal.
-# http://lesswrong.com/lw/mr6/the_library_of_scott_alexandria/
+    # I've put together a list of what I think are the best 
+    # Yvain (Scott Alexander) posts for new readers, drawing from SlateStarCodex,
+    # LessWrong, and Scott's LiveJournal.
+    # http://lesswrong.com/lw/mr6/the_library_of_scott_alexandria/
+    source: http://lesswrong.com/lw/mr6/the_library_of_scott_alexandria/
+tags:
+  title: h2
 content:
+- raw: '<h1>Rationality and Rationalization</h1>'
 - http://lesswrong.com/lw/290/blue_and_yellowtinted_choices/
 - http://lesswrong.com/lw/20/the_apologist_and_the_revolutionary/
 - http://squid314.livejournal.com/275614.html
 - http://lesswrong.com/lw/1d/simultaneously_right_and_wrong/
 - http://lesswrong.com/lw/1u/you_may_already_be_a_sinner/
-- http://slatestarcodex.com/2014/12/12/beware-the-man-of-one-study/
-- http://slatestarcodex.com/2014/12/13/debunked-and-well-refuted/
+- https://?comments=false
+- https://slatestarcodex.com/2014/12/13/debunked-and-well-refuted/?comments=false
 - http://lesswrong.com/lw/3k/how_to_not_lose_an_argument/
 - http://lesswrong.com/lw/2k/the_least_convenient_possible_world/
 - http://lesswrong.com/lw/e25/bayes_for_schizophrenics_reasoning_in_delusional/
 - http://lesswrong.com/lw/dr/generalizing_from_one_example/
 - http://lesswrong.com/lw/10j/typical_mind_and_politics/
+- raw: '<h1>Probabilism</h1>'
 - http://lesswrong.com/lw/3be/confidence_levels_inside_and_outside_an_argument/
 - http://squid314.livejournal.com/286229.html
 - http://lesswrong.com/lw/2d/talking_snakes_a_cautionary_tale/
-- http://slatestarcodex.com/2013/06/13/arguments-from-my-opponent-believes-something/
-- http://slatestarcodex.com/2013/12/17/statistical-literacy-among-doctors-now-lower-than-chance/
+- https://slatestarcodex.com/2013/06/13/arguments-from-my-opponent-believes-something/?comments=false
+- https://slatestarcodex.com/2013/12/17/statistical-literacy-among-doctors-now-lower-than-chance/?comments=false
 - http://lesswrong.com/lw/3m6/techniques_for_probability_estimates/
-- http://slatestarcodex.com/2013/08/06/on-first-looking-into-chapmans-pop-bayesianism/
+- https://slatestarcodex.com/2013/08/06/on-first-looking-into-chapmans-pop-bayesianism/?comments=false
 - http://squid314.livejournal.com/353323.html
-- http://slatestarcodex.com/2013/05/02/if-its-worth-doing-its-worth-doing-with-made-up-statistics/
-- http://slatestarcodex.com/2014/01/05/marijuana-much-more-than-you-wanted-to-know/
+- https://slatestarcodex.com/2013/05/02/if-its-worth-doing-its-worth-doing-with-made-up-statistics/?comments=false
+- https://slatestarcodex.com/2014/01/05/marijuana-much-more-than-you-wanted-to-know/?comments=false
 - http://lesswrong.com/lw/2w/are_you_a_solar_deity/
 - http://lesswrong.com/lw/34/the_spot_the_fakes_test/
 - http://squid314.livejournal.com/350090.html
-- http://slatestarcodex.com/2013/02/16/google-correlate-does-not-imply-google-causation/
-- http://slatestarcodex.com/2014/04/26/stop-confounding-yourself-stop-confounding-yourself/
-- http://slatestarcodex.com/2014/02/20/effects-of-vertical-acceleration-on-wrongness/
-- http://slatestarcodex.com/2013/02/17/90-of-all-claims-about-the-problems-with-medical-studies-are-wrong/
-- http://slatestarcodex.com/2014/11/21/prisons-are-built-with-bricks-of-law-and-brothels-with-bricks-of-religion-but-that-doesnt-prove-a-causal-relationship/
-- http://slatestarcodex.com/2013/04/12/noisy-poll-results-and-reptilian-muslim-climatologists-from-mars
-- http://slatestarcodex.com/2014/01/02/two-dark-side-statistics-papers/
-- http://slatestarcodex.com/2014/10/26/alcoholics-anonymous-much-more-than-you-wanted-to-know/
-- http://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/
-- http://slatestarcodex.com/2014/04/15/the-cowpox-of-doubt/
+- raw: '<h1>Science and Doubt</h1>'
+- https://slatestarcodex.com/2013/02/16/google-correlate-does-not-imply-google-causation/?comments=false
+- https://slatestarcodex.com/2014/04/26/stop-confounding-yourself-stop-confounding-yourself/?comments=false
+- https://slatestarcodex.com/2014/02/20/effects-of-vertical-acceleration-on-wrongness/?comments=false
+- https://slatestarcodex.com/2013/02/17/90-of-all-claims-about-the-problems-with-medical-studies-are-wrong/?comments=false
+- https://slatestarcodex.com/2014/11/21/prisons-are-built-with-bricks-of-law-and-brothels-with-bricks-of-religion-but-that-doesnt-prove-a-causal-relationship/?comments=false
+- https://slatestarcodex.com/2013/04/12/noisy-poll-results-and-reptilian-muslim-climatologists-from-mars/?comments=false
+- https://slatestarcodex.com/2014/01/02/two-dark-side-statistics-papers/?comments=false
+- https://slatestarcodex.com/2014/10/26/alcoholics-anonymous-much-more-than-you-wanted-to-know/?comments=false
+- https://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/?comments=false
+- https://slatestarcodex.com/2014/04/15/the-cowpox-of-doubt/?comments=false
 - http://lesswrong.com/lw/2p/the_skeptics_trilemma/
-- http://slatestarcodex.com/2015/09/05/if-you-cant-make-predictions-youre-still-in-a-crisis/
-- http://slatestarcodex.com/2013/09/19/scientific-freud/
-- http://slatestarcodex.com/2013/09/28/sleep-now-by-prescription/
-- http://slatestarcodex.com/2013/04/25/in-defense-of-psych-treatment-for-attempted-suicide/
-- http://slatestarcodex.com/2013/07/17/who-by-very-slow-decay/
-- http://slatestarcodex.com/2014/06/30/medicine-as-not-seen-on-tv/
-- http://slatestarcodex.com/2014/03/01/searching-for-one-sided-tradeoffs/
-- http://slatestarcodex.com/2014/03/03/do-life-hacks-ever-reach-fixation/
-- http://slatestarcodex.com/2013/04/06/polyamory-is-boring/
-- http://slatestarcodex.com/2013/05/19/can-you-condition-yourself/
-- http://slatestarcodex.com/2014/01/28/wirehead-gods-on-lotus-thrones/
-- http://slatestarcodex.com/2014/05/28/dont-fear-the-filter/
-- http://slatestarcodex.com/2013/05/27/transhumanist-fables/
+- https://slatestarcodex.com/2015/09/05/if-you-cant-make-predictions-youre-still-in-a-crisis/?comments=false
+- raw: '<h1>Medicine, Therapy, and Human Enhancement</h1>'
+- https://slatestarcodex.com/2013/09/19/scientific-freud/?comments=false
+- https://slatestarcodex.com/2013/09/28/sleep-now-by-prescription/?comments=false
+- https://slatestarcodex.com/2013/04/25/in-defense-of-psych-treatment-for-attempted-suicide/?comments=false
+- https://slatestarcodex.com/2013/07/17/who-by-very-slow-decay/?comments=false
+- https://slatestarcodex.com/2014/06/30/medicine-as-not-seen-on-tv/?comments=false
+- https://slatestarcodex.com/2014/03/01/searching-for-one-sided-tradeoffs/?comments=false
+- https://slatestarcodex.com/2014/03/03/do-life-hacks-ever-reach-fixation/?comments=false
+- https://slatestarcodex.com/2013/04/06/polyamory-is-boring/?comments=false
+- https://slatestarcodex.com/2013/05/19/can-you-condition-yourself/?comments=false
+- https://slatestarcodex.com/2014/01/28/wirehead-gods-on-lotus-thrones/?comments=false
+- https://slatestarcodex.com/2014/05/28/dont-fear-the-filter/?comments=false
+- https://slatestarcodex.com/2013/05/27/transhumanist-fables/?comments=false
+- raw: '<h1>Introduction to Game Theory</h1>'
 - http://lesswrong.com/lw/dbj/backward_reasoning_over_decision_trees/
 - http://lesswrong.com/lw/dc7/nash_equilibria_and_schelling_points/
 - http://lesswrong.com/lw/dd3/introduction_to_prisoners_dilemma/
