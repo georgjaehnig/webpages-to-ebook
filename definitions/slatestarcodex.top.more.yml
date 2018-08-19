@@ -2,13 +2,18 @@ shortname: slatestarcodex.top.more
 title: SlateStarCodex More Top Posts
 # Based on older version of Top Posts page:
 # https://web.archive.org/web/20170831162117/http://slatestarcodex.com/top-posts/
+tags:
+  title: h2
 content:
+- raw: "<h1>Long and Dense</h1>"
 - http://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/?comments=false
 - http://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/?comments=false
 - http://slatestarcodex.com/2014/12/17/the-toxoplasma-of-rage/?comments=false
 - http://slatestarcodex.com/2014/07/30/meditations-on-moloch/?comments=false
+- raw: "<h1>Shorter and Lighter</h1>"
 - http://slatestarcodex.com/2015/11/16/hardball-questions-for-the-next-debate/?comments=false
 - http://slatestarcodex.com/2015/06/02/and-i-show-you-how-deep-the-rabbit-hole-goes/?comments=false
+- raw: "<h1>Medicine</h1>"
 - http://slatestarcodex.com/2013/09/12/the-life-cycle-of-medical-ideas/?comments=false
 - http://slatestarcodex.com/2013/09/28/sleep-now-by-prescription/?comments=false
 - http://slatestarcodex.com/2014/06/15/fish-now-by-prescription/?comments=false
@@ -19,6 +24,7 @@ content:
 - http://slatestarcodex.com/2014/06/30/medicine-as-not-seen-on-tv/?comments=false
 - http://slatestarcodex.com/2015/06/29/reflections-from-the-halfway-point/?comments=false
 - http://slatestarcodex.com/2014/08/16/burdens/?comments=false
+- raw: "<h1>Scientific and Statistical Methods</h1>"
 - http://slatestarcodex.com/2013/12/17/statistical-literacy-among-doctors-now-lower-than-chance/?comments=false
 - http://slatestarcodex.com/2014/01/02/two-dark-side-statistics-papers/?comments=false
 - http://slatestarcodex.com/2013/08/29/fake-euthanasia-statistics/?comments=false
@@ -26,6 +32,7 @@ content:
 - http://slatestarcodex.com/2015/01/24/perceptions-of-required-ability-act-as-a-proxy-for-actual-required-ability-in-explaining-the-gender-gap/?comments=false
 - http://slatestarcodex.com/2015/02/14/drug-testing-welfare-users-is-a-sham-but-not-for-the-reasons-you-think/?comments=false
 - http://slatestarcodex.com/2014/04/26/stop-confounding-yourself-stop-confounding-yourself/?comments=false
+- raw: "<h1>Politics</h1>"
 - http://slatestarcodex.com/2013/03/04/a-thrivesurvive-theory-of-the-political-spectrum/?comments=false
 - http://slatestarcodex.com/2013/12/08/a-something-sort-of-like-left-libertarianism-ist-manifesto/?comments=false
 - http://slatestarcodex.com/2014/06/07/archipelago-and-atomic-communitarianism/?comments=false
@@ -34,22 +41,26 @@ content:
 - http://slatestarcodex.com/2014/02/23/in-favor-of-niceness-community-and-civilization/?comments=false
 - http://slatestarcodex.com/2013/03/03/reactionary-philosophy-in-an-enormous-planet-sized-nutshell/?comments=false
 - http://slatestarcodex.com/2014/03/08/the-slate-star-codex-political-spectrum-quiz/?comments=false
+- raw: "<h1>Social Justice</h1>"
 - http://slatestarcodex.com/2014/01/12/a-response-to-apophemi-on-triggers/?comments=false
 - http://slatestarcodex.com/2014/06/14/living-by-the-sword/?comments=false
 - http://slatestarcodex.com/2014/07/07/social-justice-and-words-words-words/?comments=false
 - http://slatestarcodex.com/2014/11/21/the-categories-were-made-for-man-not-man-for-the-categories/?comments=false
 - http://slatestarcodex.com/2013/06/22/social-psychology-is-a-flamethrower/?comments=false
 - http://slatestarcodex.com/2014/05/30/the-wonderful-thing-about-triggers/?comments=false
+- raw: "<h1>Research</h1>"
 - http://slatestarcodex.com/2014/01/05/marijuana-much-more-than-you-wanted-to-know/?comments=false
 - http://slatestarcodex.com/2014/03/30/wheat-much-more-than-you-wanted-to-know/?comments=false
 - http://slatestarcodex.com/2014/11/25/race-and-justice-much-more-than-you-wanted-to-know/?comments=false
 - http://slatestarcodex.com/2014/07/07/ssris-much-more-than-you-wanted-to-know/?comments=false
+- raw: "<h1>Rationality</h1>"
 - http://slatestarcodex.com/2013/06/13/arguments-from-my-opponent-believes-something/?comments=false
 - http://slatestarcodex.com/2013/06/09/all-debates-are-bravery-debates/?comments=false
 - http://slatestarcodex.com/2014/05/12/weak-men-are-superweapons/?comments=false
 - http://slatestarcodex.com/2015/09/16/cardiologists-and-chinese-robbers/?comments=false
 - http://slatestarcodex.com/2013/05/02/if-its-worth-doing-its-worth-doing-with-made-up-statistics/?comments=false
 - http://slatestarcodex.com/2014/08/14/beware-isolated-demands-for-rigor/?comments=false
+- raw: "<h1>Fiction</h1>"
 - http://slatestarcodex.com/2015/04/21/universal-love-said-the-cactus-person/?comments=false
 - http://slatestarcodex.com/2015/03/15/answer-to-job/?comments=false
 - http://slatestarcodex.com/2014/04/03/the-study-of-anglophysics/?comments=false
