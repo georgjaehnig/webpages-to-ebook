@@ -1,5 +1,7 @@
 shortname: slatestarcodex.top.more
-title: SlateStarCodex More Top Posts
+metadata:
+  dc:
+    title: SlateStarCodex More Top Posts
 # Based on older version of Top Posts page:
 # https://web.archive.org/web/20170831162117/http://slatestarcodex.com/top-posts/
 tags:

@@ -1,6 +1,8 @@
 shortname: consequentialism
-title: Consequentialism
-language: en-US
+metadata:
+  dc:
+    title: Consequentialism
+    language: en-US
 modify:
   content:
   - search: '�'

@@ -1,7 +1,9 @@
 shortname: wbw
-title: Wait But Why, popular posts
-author: Tim Urban
-language: en-US
+metadata:
+  dc:
+    title: Wait But Why, popular posts
+    creator: Tim Urban
+    language: en-US
 content:
 - https://waitbutwhy.com/2015/12/the-tail-end.html
 - https://waitbutwhy.com/2015/05/elon-musk-the-worlds-raddest-man.html

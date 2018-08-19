@@ -1,7 +1,9 @@
 shortname: markmanson
-title: All Articles
-author: Mark Manson
-language: en-US
+metadata:
+  dc:
+    title: All Articles
+    creator: Mark Manson
+    language: en-US
 content:
 - https://markmanson.net/this-is-water
 - https://markmanson.net/the-zen-dilemma

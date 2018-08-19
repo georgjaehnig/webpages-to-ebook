@@ -1,8 +1,10 @@
 # This is just a base for all slatestarcodex.* files
 # Use it together with the others, e.g.
 # node index.js slatestarcodex.top.yml slatestarcodex.base.yml
-author: Scott Alexander
-language: en-US
+metadata:
+  dc:
+    creator: Scott Alexander
+    language: en-US
 modify:
   content:
   - search: (<img .*?)>
