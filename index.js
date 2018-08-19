@@ -5,6 +5,7 @@ const Twig = require('twig');
 const child_process = require( 'child_process' );
 const readability = require('node-readability');
 const deepmerge = require('deepmerge');
+const commandExistsSync = require('command-exists').sync;
 
 var book;
 var count;
@@ -14,6 +15,14 @@ var hashes = [];
 main();
 
 function main() {
+
+  // Check for dependencies in PATH.
+  for (let command of ['wget','pandoc']) {
+    if (!commandExistsSync(command)) {
+      console.log('"' + command + '" is missing in (current) PATH.');
+      return; 
+    }
+  }
 
   // Parse arguments.
   if (process.argv.length < 3) {
