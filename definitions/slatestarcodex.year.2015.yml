@@ -1,5 +1,7 @@
 shortname: slatestarcodex.year.2015
-title: SlateStarCodex 2015 articles
+metadata:
+  dc:
+    title: SlateStarCodex 2015 articles
 content:
 - http://slatestarcodex.com/2015/01/01/untitled/?comments=false
 - http://slatestarcodex.com/2015/01/01/2014-predictions-calibration-results/?comments=false

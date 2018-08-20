@@ -1,5 +1,7 @@
 shortname: slatestarcodex.year.2014
-title: SlateStarCodex 2014 articles
+metadata:
+  dc:
+    title: SlateStarCodex 2014 articles
 content:
 - http://slatestarcodex.com/2014/01/02/two-dark-side-statistics-papers/?comments=false
 - http://slatestarcodex.com/2014/01/05/marijuana-much-more-than-you-wanted-to-know/?comments=false
