@@ -16,6 +16,8 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 - [`slatestarcodex.top.epub`](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), created from [`definitions/slatestarcodex.top.yml`](definitions/slatestarcodex.top.yml)
 - [`slatestarcodex.top.more.epub`](https://drive.google.com/open?id=12JMJOpV_SazxNPhrCptk0hydJPrrJH4M), created from [`definitions/slatestarcodex.top.more.yml`](definitions/slatestarcodex.top.more.yml)
 
+Also some structuring with raw HTML is possible, check 
+[`definitions/library_of_scott_alexandria.yml`](definitions/library_of_scott_alexandria.yml) and in there `raw:` and `tags:/title:`.
 
 
 ## Create your own ebooks
