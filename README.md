@@ -6,7 +6,7 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 
 
 ## Examples
-- [`slatestarcodex.year.2019.epub`](https://drive.google.com/open?id=1liKxjGrMzbYEPOFP7o-_TkSmmkkzaBZP), (until April, 3rd)created from [`definitions/slatestarcodex.year.2019.yml`](definitions/slatestarcodex.year.2019.yml)
+- [`slatestarcodex.year.2019.epub`](https://drive.google.com/open?id=1liKxjGrMzbYEPOFP7o-_TkSmmkkzaBZP), (until April, 3rd) created from [`definitions/slatestarcodex.year.2019.yml`](definitions/slatestarcodex.year.2019.yml)
 - [`slatestarcodex.year.2018.epub`](https://drive.google.com/open?id=12AaNlYfNHz8Ym2vo2P5zlHmIvAZFT0_B), created from [`definitions/slatestarcodex.year.2018.yml`](definitions/slatestarcodex.year.2018.yml)
 - [`slatestarcodex.year.2017.epub`](https://drive.google.com/open?id=0B73-tppgbUreVy05TXlOcm5DczQ), created from [`definitions/slatestarcodex.year.2017.yml`](definitions/slatestarcodex.year.2017.yml)
 - [`slatestarcodex.year.2016.epub`](https://drive.google.com/open?id=0B73-tppgbUreNE94UEdFTnNDTHM), created from [`definitions/slatestarcodex.year.2016.yml`](definitions/slatestarcodex.year.2016.yml)
