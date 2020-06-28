@@ -101,8 +101,13 @@ function ensureRawFile(url, hash) {
   // TODO: Deprecated.
   if (!fs.existsSync('./output/html/' + hash + '.html')) {
     console.log(hash + "\t" + 'downloading');
-    child_process.spawnSync( book.commands.wget, [ '-O', './output/html/' + hash + '.html', '--convert-links', url ] ); 
-    console.log(hash + "\t" + 'downloaded');
+    const ret = child_process.spawnSync( book.commands.wget, [ '-O', './output/html/' + hash + '.html', '--convert-links', url ] ); 
+    if (ret.status === 0) {
+      console.log(hash + "\t" + 'downloaded successfully');
+    }
+    else {
+      console.log(hash + ": Failed to download.");
+    }
   }
   else {
     console.log(hash + "\t" + 'already downloaded');
