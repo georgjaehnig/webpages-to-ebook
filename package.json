@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "Create an EPUB from a list of URLs.",
   "main": "index.js",
+  "repository": "https://github.com/georgjaehnig/webpages-to-ebook",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "article-parser": "^4.2.1",
     "command-exists": "^1.2.7",
     "deepmerge": "^2.0.1",
     "htmltidy2": "^0.2.1",
