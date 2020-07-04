@@ -4,6 +4,7 @@ const md5 = require('md5');
 const Twig = require('twig');
 const child_process = require( 'child_process' );
 const readability = require('node-readability');
+const { extract } = require('article-parser');
 const deepmerge = require('deepmerge');
 const commandExistsSync = require('command-exists').sync;
 
@@ -127,13 +128,7 @@ function parseFile(url, hash) {
       console.log(hash + "\t" + 'read error'); 
     }
 
-    readability(html, function(err, article, meta) {
-      if (err) {
-        console.log(hash + ': Error on parsing. Skipping file.');
-        fs.writeFileSync('./output/html.processed/' + hash + '.html', '');
-        decreaseCount();
-        return;
-      }
+    extract(html).then((article) => {
       let context = {};
       context.title = article.title;
       context.content = article.content;
@@ -144,7 +139,13 @@ function parseFile(url, hash) {
       console.log(hash + "\t" + 'extracting content');
       fs.writeFileSync('./output/html.processed/' + hash + '.html', html_processed);
       decreaseCount();
+    }).catch((err) => {
+      console.log(hash + ': Error on parsing. Skipping file.');
+      fs.writeFileSync('./output/html.processed/' + hash + '.html', '');
+      decreaseCount();
+      return;
     });
+
   });
 }
 
