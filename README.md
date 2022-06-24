@@ -33,12 +33,12 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 - [`slatestarcodex.year.2020.epub`](https://drive.google.com/file/d/1C3sXHvjskBlcCmZ40lLG7Ndy6RA-VtXp), [source](definitions/slatestarcodex.year.2020.yml)
 - [`slatestarcodex.year.2019.epub`](https://drive.google.com/file/d/1PQnD01EbMHPZ6TCwQWPhDd0nxcj3hwf7), [source](definitions/slatestarcodex.year.2019.yml)
 - [`slatestarcodex.year.2018.epub`](https://drive.google.com/open?id=12AaNlYfNHz8Ym2vo2P5zlHmIvAZFT0_B), [source](definitions/slatestarcodex.year.2018.yml)
-- [`slatestarcodex.year.2017.epub`](https://drive.google.com/open?id=0B73-tppgbUreVy05TXlOcm5DczQ), [source](definitions/slatestarcodex.year.2017.yml)
-- [`slatestarcodex.year.2016.epub`](https://drive.google.com/open?id=0B73-tppgbUreNE94UEdFTnNDTHM), [source](definitions/slatestarcodex.year.2016.yml)
-- [`slatestarcodex.year.2015.epub`](https://drive.google.com/open?id=0B73-tppgbUreZlU1N1h3TUFHM1k), [source](definitions/slatestarcodex.year.2015.yml)
-- [`slatestarcodex.year.2014.epub`](https://drive.google.com/open?id=0B73-tppgbUreZExTZ1hOdHdWMjg), [source](definitions/slatestarcodex.year.2014.yml)
-- [`slatestarcodex.year.2013.epub`](https://drive.google.com/open?id=0B73-tppgbUredzNjY0xPbmNOVms), [source](definitions/slatestarcodex.year.2013.yml)
-- [`slatestarcodex.top.epub`](https://drive.google.com/open?id=0B73-tppgbUreZkxqU0ZQcjhzQ1E), [source](definitions/slatestarcodex.top.yml)
+- [`slatestarcodex.year.2017.epub`](https://drive.google.com/file/d/0B73-tppgbUreVy05TXlOcm5DczQ/view?usp=sharing&resourcekey=0-uaqxFMA1jZNviBEMbowu0g), [source](definitions/slatestarcodex.year.2017.yml)
+- [`slatestarcodex.year.2016.epub`](https://drive.google.com/file/d/0B73-tppgbUreNE94UEdFTnNDTHM/view?usp=sharing&resourcekey=0-Cvtli3roDhvy2Wo3M_FqnQ), [source](definitions/slatestarcodex.year.2016.yml)
+- [`slatestarcodex.year.2015.epub`](https://drive.google.com/file/d/0B73-tppgbUreZlU1N1h3TUFHM1k/view?usp=sharing&resourcekey=0-hNUBc9EmPtkDmKfaH4J2sQ), [source](definitions/slatestarcodex.year.2015.yml)
+- [`slatestarcodex.year.2014.epub`](https://drive.google.com/file/d/0B73-tppgbUreZExTZ1hOdHdWMjg/view?usp=sharing&resourcekey=0-XhyLMCAg48AGHlQUMdC_xA), [source](definitions/slatestarcodex.year.2014.yml)
+- [`slatestarcodex.year.2013.epub`](https://drive.google.com/file/d/0B73-tppgbUredzNjY0xPbmNOVms/view?usp=sharing&resourcekey=0-pcXc28FmmHlz8qbGQHTuGw), [source](definitions/slatestarcodex.year.2013.yml)
+- [`slatestarcodex.top.epub`](https://drive.google.com/file/d/0B73-tppgbUreZkxqU0ZQcjhzQ1E/view?usp=sharing&resourcekey=0-JuG5jMNMb6MGfT4UKUK2Cg), [source](definitions/slatestarcodex.top.yml)
 - [`slatestarcodex.top.more.epub`](https://drive.google.com/open?id=12JMJOpV_SazxNPhrCptk0hydJPrrJH4M), [source](definitions/slatestarcodex.top.more.yml)
 
 Also some structuring with raw HTML is possible, check 
