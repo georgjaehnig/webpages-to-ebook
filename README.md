@@ -31,7 +31,7 @@ Create an EPUB from a list of URLs. Standing on the shoulders of
 
 ## Examples
 
-- [Slatestarcodex](https://mega.nz/folder/JZBAhSQS#Odgm1WR_SJ4zeFMl-4wvDw)
+- [Slatestarcodex](https://mega.nz/folder/JZBAhSQS#Odgm1WR_SJ4zeFMl-4wvDw), based on these [definitions](definitions/).
 
 Also some structuring with raw HTML is possible, check 
 [`definitions/library_of_scott_alexandria.yml`](definitions/library_of_scott_alexandria.yml) and in there `raw:` and `tags:/title:`.
